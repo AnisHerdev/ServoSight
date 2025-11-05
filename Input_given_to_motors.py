@@ -8,7 +8,7 @@ import sys
 # --- Configuration ---
 SERIAL_PORT = 'COM8'     # Update to your Arduino port.
 BAUD_RATE = 9600
-CAMERA_INDEX = 0
+CAMERA_INDEX = 1
 KP_PAN = 0.04
 KP_TILT = 0.04
 current_pan_angle = 90
@@ -60,6 +60,7 @@ def main():
         sys.exit(1)
 
     cap = cv2.VideoCapture(CAMERA_INDEX)
+    cap.set(cv2.CAP_PROP_EXPOSURE, -8) 
     if not cap.isOpened():
         print("Cannot open camera")
         sys.exit(1)
@@ -83,7 +84,7 @@ def main():
             if not ret:
                 print("Camera frame not received")
                 break
-            frame = cv2.flip(frame, 1)
+            # frame = cv2.flip(frame, 1)
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
             # --- Face detection and pan/tilt tracking ---
