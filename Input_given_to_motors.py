@@ -6,7 +6,7 @@ import datetime
 import sys
 
 # --- Configuration ---
-SERIAL_PORT = 'COM8'     # Update to your Arduino port.
+SERIAL_PORT = 'COM8'     
 BAUD_RATE = 9600
 CAMERA_INDEX = 1
 KP_PAN = 0.04
@@ -174,3 +174,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
