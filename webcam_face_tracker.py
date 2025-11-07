@@ -11,7 +11,7 @@ import cv2
 # Check your Arduino IDE to find the correct port.
 SERIAL_PORT = '/dev/ttyACM0'  
 BAUD_RATE = 9600 # Must match the Arduino sketch
-CAMERA_INDEX = 0 # Usually 0 for the built-in webcam
+CAMERA_INDEX = 1 # Usually 0 for the built-in webcam
 
 # --- Tracking Parameters ---
 # The target frame dimensions will be automatically detected, 
